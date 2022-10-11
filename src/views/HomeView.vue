@@ -1,18 +1,26 @@
 <template>
-  <div class="home">
+  <div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <LoginModal/>
+    <SignUpModal/>
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>WELCOME TO HOME PAGE</h1>
+    <h1>Homepage vaade</h1>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
+import LoginModal from "@/components/LoginModal";
+import SignUpModal from "@/components/SignUpModal";
 
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
-  }
+  components: {LoginModal, SignUpModal},
 }
 </script>
