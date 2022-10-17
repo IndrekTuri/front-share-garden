@@ -45,7 +45,7 @@
           </div>
 
           <div class="modal-footer">
-            <button class="btn btn-success" v-on:click="login">Login</button>
+            <button class="btn btn-success" data-bs-dismiss="modal" v-on:click="login">Login</button>
             <div class="row-footer">
               <label>Not as user?</label>&nbsp;
               <a type="button" class="link" data-bs-target="#signupModal" data-bs-toggle="modal">Sign Up</a>
@@ -108,7 +108,6 @@ export default {
   toHomeView: function () {
     this.$router.push({name: 'homeRoute'})
   },
-
 
 }
 </script>

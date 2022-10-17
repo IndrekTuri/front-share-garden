@@ -18,7 +18,7 @@ name: 'App',
 </script>
 
 
-<style>
+<style scoped>
 /*@import url('http://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800');*/
 * {
   box-sizing: border-box;
