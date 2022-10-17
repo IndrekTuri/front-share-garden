@@ -1,20 +1,12 @@
 <template>
   <div>
-    <div>
-      <div class="container">
-        <img alt="" scr="">
-      </div>
-
-        <img alt="Vue logo" src="../assets/logo.png">
-        <h1>WELCOME TO HOME PAGE</h1>
-        <h1>Homepage vaade</h1>
-
-      </div>
-
-
-      <LoginModal/>
-      <SignUpModal/>
+    <div class="container">
+      <img alt="veggies" src="../assets/veggies_banner.png">
     </div>
+
+    <LoginModal/>
+    <SignUpModal/>
+  </div>
 </template>
 
 <script>
@@ -31,8 +23,10 @@ export default {
 <style scoped>
 
 img {
-  margin-top: 300px;
-  outline-style: dotted;
-  height: 300px;
+  width: 100%;
+  margin-top: 125px;
+  border-radius: 20px;
+  box-shadow: 1px 14px 80px rgba(34, 35, 58, 0.15);
 }
 </style>
+
