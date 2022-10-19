@@ -19,10 +19,9 @@
 
 import SignUpModal from "@/components/SignUpModal";
 import LoginModal from "@/components/LoginModal";
-import TestModal from "@/components/TestModal";
 export default {
   name: 'IntoGardenView',
-  components: {TestModal, SignUpModal, LoginModal},
+  components: {SignUpModal, LoginModal},
 }
 </script>
 
