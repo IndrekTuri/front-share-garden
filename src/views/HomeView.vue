@@ -9,10 +9,8 @@
 
       <div class="row">
         <div class="last-five">
-          Siia tuleb viis viimast toodet
-
-<!--          <ProductTableBody :product-infos="productInfos"/>-->
-          <ProductTableTest :product-infos="productInfos"/>
+          <p>Hiljuti lisatud tooted:</p>
+          <ProductGallery :product-infos="productInfos"/>
         </div>
       </div>
 
@@ -21,6 +19,7 @@
     <LoginModal/>
     <SignUpModal/>
   </div>
+
 </template>
 
 <script>
@@ -28,16 +27,16 @@
 import LoginModal from "@/components/LoginModal";
 import SignUpModal from "@/components/SignUpModal";
 import ButtonsCategory from "@/components/Product/ButtonsCategory";
-// import ProductTableBody from "@/components/Product/ProductTableBody";
-import ProductTableTest from "@/components/Product/ProductTableTest";
+import ProductGallery from "@/components/Product/ProductGallery";
+
 
 export default {
   name: 'HomeView',
-  components: {ProductTableTest, ButtonsCategory, LoginModal, SignUpModal},
+  components: {ButtonsCategory, LoginModal, SignUpModal,ProductGallery},
 
   data: function () {
     return {
-      ProductInfos:
+      productInfos:
           [
             {
               productId: 0,
@@ -81,25 +80,15 @@ img {
 }
 
 .row .category-btn {
-  margin-top: 25px;
+  margin-top: 15px;
   justify-content: center;
-  height: auto;
-  width: 100%;
   display: flex;
-  /*outline-style: dotted;*/
 }
 
-.row .last-five {
-  margin-top: 25px;
-  height: auto;
-  outline-style: dotted;
-  outline-color: red;
-}
-
-.last-five {
-  outline-style: dotted;
-  outline-color: #167bff;
-  display: table-cell;
+p{
+  font-size: 20px;
+  margin: 10px 0 5px;
+  float: left;
 }
 </style>
 

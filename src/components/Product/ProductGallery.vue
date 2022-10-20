@@ -1,22 +1,19 @@
 <template>
+  <div class="gallery">
+    <div class="content" v-for="product in productInfos" :key="product.productId">
 
-    <div class="gallery">
-      <div class="content" v-for="product in productInfos" :key="product.productId">
-        <img v-if="product.imageBase64 == null" src="https://static.thenounproject.com/png/1875006-200.png">
-        <h3>{{ product.productName }}</h3>
-        <p> {{ product.quantity }} {{ product.measureUnit }}</p>
-        <h6>{{ product.regionName }}</h6>
-        <button type="button" class="btn btn-outline-dark"> Add to basket</button>
-      </div>
+      <img alt="" v-if="product.imageBase64 == null" src="https://static.thenounproject.com/png/1875006-200.png">
+      <h3>{{ product.productName }}</h3>
+      <p> {{ product.quantity }} {{ product.measureUnit }}</p>
+      <h6>{{ product.regionName }}</h6>
+      <button type="button" class="add-basket"> Lisa korvi</button>
     </div>
-
-
-
+  </div>
 </template>
 
 <script>
 export default {
-  name: "ProductTableTest",
+  name: "ProductGallery",
   props: {
     productInfos: {}
   }
@@ -42,7 +39,6 @@ a {
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin: 25px 0;
 
 }
 
@@ -58,7 +54,7 @@ a {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
   0 10px 10px rgba(0, 0, 0, 0.22);
   transition: .4s;
-  background: #f2f2f2;
+  background: white;
 
 }
 
@@ -89,4 +85,34 @@ h6 {
   color: #222f3e;
   margin: 0;
 }
+
+button {
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  margin-top: 10px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.add-basket{
+  background: chocolate;
+}
+
+@media(max-width: 1000px){
+  .content {
+    width: 45%;
+  }
+}
+@media(max-width: 750px){
+  .content {
+    width: 100%;
+  }
+}
+
 </style>

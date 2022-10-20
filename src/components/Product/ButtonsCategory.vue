@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-for="category in categories">
-      <button type="button" class="btn btn-success"
+      <button type="button" class="btn-category"
               v-on:click="findProductsByCategoryId(category.categoryId)">{{ category.name }}
       </button>
     </div>
@@ -55,7 +55,7 @@ export default {
 </script>
 
 <style scoped>
-.btn {
+.btn-category {
   width: 115px;
   padding: 10px;
   margin: 5px;
@@ -68,7 +68,7 @@ export default {
   cursor: pointer;
 }
 
-.btn:hover {
+.btn-category:hover {
   background-color: yellowgreen;
 }
 </style>
