@@ -31,7 +31,7 @@ import ProductGallery from "@/components/Product/ProductGallery";
 
 export default {
   name: 'HomeView',
-  components: {ButtonsCategory, LoginModal, SignUpModal,ProductGallery},
+  components: {ButtonsCategory, LoginModal, SignUpModal, ProductGallery},
 
   data: function () {
     return {
@@ -70,24 +70,36 @@ export default {
 </script>
 
 <style scoped>
+/*.container {*/
+/*  outline-style: dotted;*/
+/*  outline-color: red;*/
+/*}*/
 
 img {
   width: 100%;
   margin-top: 115px;
   border-radius: 20px;
-  box-shadow: 1px 14px 80px rgba(34, 35, 58, 0.15);
+  box-shadow: 0px 14px 28px rgba(0, 0, 0, 0.25),
+  0 5px 5px rgba(0, 0, 0, 0.22);
+  /*outline-style: dotted;*/
+  /*outline-color: blue;*/
 }
 
 .row .category-btn {
-  margin-top: 15px;
+  margin-top: 25px;
   justify-content: center;
+  align-content: center;
   display: flex;
+  /*outline-style: dotted;*/
+  /*outline-color: green;*/
 }
 
-p{
+p {
   font-size: 20px;
-  margin: 10px 25px 5px;
+  margin: 10px 50px 5px;
   float: left;
+  /*outline-style: dotted;*/
+  /*outline-color: darkviolet;*/
 }
 </style>
 

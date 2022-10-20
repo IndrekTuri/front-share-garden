@@ -1,5 +1,6 @@
 <template>
   <div>
+<!--    <AlertError :errorMessage="alertError"/>-->
     <div v-for="category in categories">
       <button type="button" class="btn-category"
               v-on:click="findProductsByCategoryId(category.categoryId)">{{ category.name }}
@@ -10,10 +11,15 @@
 </template>
 
 <script>
+import AlertError from "@/components/Alerts/AlertError";
+
 export default {
   name: "ButtonsCategory",
+  components:{AlertError},
+
   data: function () {
     return {
+      alertError: '',
       categories: [
         {
           categoryId: 0,
@@ -33,6 +39,7 @@ export default {
       })
     },
     findProductsByCategoryId: function (categoryId) {
+      this.alertError = ''
       this.$http.get('/product/category', {
             params: {
               categoryId: categoryId
@@ -42,7 +49,7 @@ export default {
         this.productInfos = response.data
         this.$emit('eventProductsByCategoryIdSuccess', this.productInfos)
       }).catch(error => {
-        console.log(error)
+        this.alertError = error.response.data.detail
       })
     }
 

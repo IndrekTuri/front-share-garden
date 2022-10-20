@@ -43,7 +43,7 @@ a {
 }
 
 .content {
-  width: 17%;
+  width: 16%;
   margin: 15px;
   box-sizing: border-box;
   float: left;

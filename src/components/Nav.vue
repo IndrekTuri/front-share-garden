@@ -39,7 +39,8 @@ export default {
 
 .navbar-light {
   background-color: #ffffff;
-  box-shadow: 1px 14px 80px rgba(34, 35, 58, 0.2);
+  box-shadow: 0px 14px 28px rgba(0, 0, 0, 0.25),
+  0 5px 5px rgba(0, 0, 0, 0.22);
 }
 
 img {
