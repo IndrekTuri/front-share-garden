@@ -87,7 +87,8 @@ img {
 
 p{
   font-size: 20px;
-  margin: 10px 0 5px;
+  font-weight: bold;
+  margin: 10px 25px 5px;
   float: left;
 }
 </style>
