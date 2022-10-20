@@ -1,4 +1,5 @@
 <template>
+
   <div class="home">
     <div class="container">
       <img alt="veggies" src="../assets/veggies_banner.png">
@@ -13,9 +14,7 @@
           <ProductGallery :product-infos="productInfos"/>
         </div>
       </div>
-
     </div>
-
     <LoginModal/>
     <SignUpModal/>
   </div>
@@ -87,7 +86,6 @@ img {
 
 p{
   font-size: 20px;
-  font-weight: bold;
   margin: 10px 25px 5px;
   float: left;
 }
