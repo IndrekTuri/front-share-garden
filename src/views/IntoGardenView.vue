@@ -6,21 +6,30 @@
       <img alt="share" src="../assets/share_banner.jpg">
 
       <div class="row">
+        <!-- Dropdown for categories-->
+        <DropdownCategory @eventProductsByCategoryIdSuccess="updateCategories" />
+<!--      All products button-->
+        <div class="col-1">
+          <button class="btn-find-all" v-on:click="findAllProducts">Kõik tooted</button>
+        </div>
+
+        <!-- Search box for products-->
         <div class="input-group">
           <input type="search" class="form-control" placeholder="Otsi tooteid" v-model="keyword">
           <div class="input-group-append">
             <button class="search-button" type="button" v-on:click="findProductsByKeyword">Otsi</button>
           </div>
         </div>
+
+        <!-- Dropdown for regions-->
+        <DropdownRegion @eventProductByRegionIdSuccess="updateRegions"/>
+
       </div>
 
       <AlertError :errorMessage="alertError"/>
 
       <div class="row">
-        <div class="col-1">
-          <button class="btn-find-all" v-on:click="findAllProducts">Kõik tooted</button>
-          <ButtonsCategory @eventProductsByCategoryIdSuccess="updateCategories" class="category-btn"/>
-        </div>
+
 
         <div class="col">
           <div class="all-products">
@@ -41,13 +50,14 @@
 
 import SignUpModal from "@/components/SignUpModal";
 import LoginModal from "@/components/LoginModal";
-import ButtonsCategory from "@/components/Product/ButtonsCategory";
 import ProductGallery from "@/components/Product/ProductGallery";
 import AlertError from "@/components/Alerts/AlertError";
+import DropdownCategory from "@/components/Product/DropdownCategory";
+import DropdownRegion from "@/components/Product/DropdownRegion";
 
 export default {
   name: 'IntoGardenView',
-  components: {ButtonsCategory, SignUpModal, LoginModal, ProductGallery, AlertError},
+  components: {DropdownRegion, DropdownCategory, SignUpModal, LoginModal, ProductGallery, AlertError},
   props: {},
 
   data: function () {
@@ -92,8 +102,12 @@ export default {
     },
     updateCategories: function (productInfos) {
       this.productInfos = productInfos
+    },
+    updateRegions: function (productInfos) {
+      this.productInfos = productInfos
     }
   },
+
   mounted() {
     this.findAllProducts()
   }
@@ -104,10 +118,10 @@ export default {
 
 <style scoped>
 
-/*.container {*/
-/*  outline-style: dotted;*/
-/*  outline-color: red;*/
-/*}*/
+.container {
+  outline-style: dotted;
+  outline-color: red;
+}
 
 img {
   width: 100%;
@@ -115,14 +129,14 @@ img {
   border-radius: 20px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
   0 5px 5px rgba(0, 0, 0, 0.22);
-  /*outline-style: dotted;*/
-  /*outline-color: #A1BF37;*/
+  outline-style: dotted;
+  outline-color: #A1BF37;
 }
 
 .row {
   margin-top: 25px;
-  /*outline-style: dotted;*/
-  /*outline-color: blue;*/
+  outline-style: dotted;
+  outline-color: blue;
 
 }
 
@@ -130,7 +144,7 @@ img {
   margin-top: 15px;
   width: auto;
   justify-content: center;
-  /*outline-style: dotted;*/
+  outline-style: dotted;
 
 }
 
@@ -138,8 +152,8 @@ img {
   margin-top: 15px;
   width: auto;
   flex-direction: column;
-  /*outline-style: dotted;*/
-  /*outline-color: chocolate;*/
+  outline-style: dotted;
+  outline-color: chocolate;
 }
 
 .btn-find-all {
@@ -160,11 +174,11 @@ img {
 }
 
 .input-group {
-  width: 40%;
+  width: 65%;
   margin: auto;
   padding: 10px;
-  /*outline-style: dotted;*/
-  /*outline-color: violet;*/
+  outline-style: dotted;
+  outline-color: violet;
 }
 
 input {
@@ -186,7 +200,7 @@ input::placeholder {
   color: #7f7d7d;
 }
 
-button {
+.search-button {
   text-align: center;
   font-size: 18px;
   color: white;
@@ -203,6 +217,7 @@ button {
 .search-button {
   background: #A1BF37;
 }
+
 .search-button:hover {
   background-color: yellowgreen;
 }
