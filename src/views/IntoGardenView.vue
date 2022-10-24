@@ -49,12 +49,10 @@ import AlertError from "@/components/Alerts/AlertError";
 import DropdownCategory from "@/components/Product/DropdownCategory";
 import DropdownRegion from "@/components/Product/DropdownRegion";
 import ButtonAllProducts from "@/components/Product/ButtonAllProducts";
-import FieldSearch from "@/components/Product/FieldSearch";
 
 export default {
   name: 'IntoGardenView',
   components: {
-    FieldSearch,
     ButtonAllProducts, DropdownRegion, DropdownCategory, SignUpModal, LoginModal, ProductGallery, AlertError
   },
   props: {},
