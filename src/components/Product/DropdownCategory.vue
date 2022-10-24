@@ -68,7 +68,7 @@ img {
 }
 
 .dropdown {
-  width: 15%;
+  width: 30%;
   margin: auto;
   padding: 10px;
   outline-style: dotted;

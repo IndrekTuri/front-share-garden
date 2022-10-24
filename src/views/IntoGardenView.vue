@@ -141,7 +141,7 @@ img {
 }
 
 .col-1 {
-  margin-top: 15px;
+  margin: 10px;
   width: auto;
   justify-content: center;
   outline-style: dotted;
@@ -157,7 +157,7 @@ img {
 }
 
 .btn-find-all {
-  width: 115px;
+  width: 115%;
   padding: 10px;
   margin: 5px;
   font-size: 14px;
@@ -187,7 +187,6 @@ input {
   border: none;
   outline: none;
   font-size: 14px;
-  margin-top: 10px;
   background-color: #eee;
   border-radius: 40px;
 }
@@ -209,7 +208,6 @@ input::placeholder {
   border: 0;
   outline: none;
   cursor: pointer;
-  margin-top: 10px;
   border-bottom-right-radius: 40px;
   border-top-right-radius: 40px;
 }
