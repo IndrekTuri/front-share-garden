@@ -57,22 +57,16 @@ export default {
 <style scoped>
 
 .dropdown {
-  width: 30%;
-  margin: auto;
-  padding: 10px;
-  outline-style: dotted;
-  outline-color: #7f7d7d;
-}
-.form-select-indicator-color {
-
+  width: 19%;
+  padding: 10px;;
 }
 
 select {
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  color: white;
-  background-color: #A1BF37;
+  color: #7f7d7d;
+  background-color: #eeeeee;
   border: none;
   outline: none;
   border-radius: 40px;

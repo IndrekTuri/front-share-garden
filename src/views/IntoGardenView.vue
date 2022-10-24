@@ -3,38 +3,32 @@
   <div class="into-garden">
 
     <div class="container">
-      <img alt="share" src="../assets/share_banner.jpg">
+        <!--Alternative solution with banner-->
+        <!--<img alt="share" src="../assets/share_banner.jpg">-->
 
-      <div class="row">
+      <div class="row-1">
         <!-- Dropdown for categories-->
-        <DropdownCategory @eventProductsByCategoryIdSuccess="updateCategories" />
-<!--      All products button-->
-        <div class="col-1">
-          <button class="btn-find-all" v-on:click="findAllProducts">Kõik tooted</button>
-        </div>
+        <DropdownCategory @eventProductsByCategoryIdSuccess="updateCategories"/>
+        <!-- Dropdown for regions-->
+        <DropdownRegion @eventProductByRegionIdSuccess="updateRegions"/>
+        <!-- All products button-->
+        <ButtonAllProducts :find-all-products="findAllProducts" onClick="document.location.reload()"/>
+      </div>
 
-        <!-- Search box for products-->
+      <div class="row-2">
         <div class="input-group">
           <input type="search" class="form-control" placeholder="Otsi tooteid" v-model="keyword">
           <div class="input-group-append">
             <button class="search-button" type="button" v-on:click="findProductsByKeyword">Otsi</button>
           </div>
         </div>
-
-        <!-- Dropdown for regions-->
-        <DropdownRegion @eventProductByRegionIdSuccess="updateRegions"/>
-
       </div>
 
-      <AlertError :errorMessage="alertError"/>
-
-      <div class="row">
-
-
-        <div class="col">
-          <div class="all-products">
-            <ProductGallery :product-infos="productInfos"/>
-          </div>
+      <div class="row-3">
+        <!--Alert message has to pop up. Will fix all alerts in alert message task-->
+        <AlertError :errorMessage="alertError"/>
+        <div class="all-products">
+          <ProductGallery :product-infos="productInfos"/>
         </div>
 
       </div>
@@ -54,10 +48,15 @@ import ProductGallery from "@/components/Product/ProductGallery";
 import AlertError from "@/components/Alerts/AlertError";
 import DropdownCategory from "@/components/Product/DropdownCategory";
 import DropdownRegion from "@/components/Product/DropdownRegion";
+import ButtonAllProducts from "@/components/Product/ButtonAllProducts";
+import FieldSearch from "@/components/Product/FieldSearch";
 
 export default {
   name: 'IntoGardenView',
-  components: {DropdownRegion, DropdownCategory, SignUpModal, LoginModal, ProductGallery, AlertError},
+  components: {
+    FieldSearch,
+    ButtonAllProducts, DropdownRegion, DropdownCategory, SignUpModal, LoginModal, ProductGallery, AlertError
+  },
   props: {},
 
   data: function () {
@@ -105,7 +104,10 @@ export default {
     },
     updateRegions: function (productInfos) {
       this.productInfos = productInfos
-    }
+    },
+    updateKeywords: function (productInfos) {
+      this.productInfos = productInfos;
+    },
   },
 
   mounted() {
@@ -113,15 +115,9 @@ export default {
   }
 }
 
-
 </script>
 
 <style scoped>
-
-.container {
-  outline-style: dotted;
-  outline-color: red;
-}
 
 img {
   width: 100%;
@@ -129,64 +125,31 @@ img {
   border-radius: 20px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
   0 5px 5px rgba(0, 0, 0, 0.22);
-  outline-style: dotted;
-  outline-color: #A1BF37;
 }
 
-.row {
-  margin-top: 25px;
-  outline-style: dotted;
-  outline-color: blue;
-
-}
-
-.col-1 {
-  margin: 10px;
-  width: auto;
+.row-1 {
+  margin-top: 115px;
   justify-content: center;
-  outline-style: dotted;
-
+  align-content: center;
+  display: flex;
 }
 
-.col {
-  margin-top: 15px;
-  width: auto;
-  flex-direction: column;
-  outline-style: dotted;
-  outline-color: chocolate;
+.row-2 {
+  justify-content: center;
+  align-content: center;
+  display: flex;
 }
-
-.btn-find-all {
-  width: 115%;
-  padding: 10px;
-  margin: 5px;
-  font-size: 14px;
-  color: #ffffff;
-  background-color: #A1BF37;
-  border: none;
-  outline: none;
-  border-radius: 40px;
-  cursor: pointer;
-}
-
-.btn-find-all:hover {
-  background-color: yellowgreen;
-}
-
 .input-group {
-  width: 65%;
-  margin: auto;
+  width: 55%;
   padding: 10px;
-  outline-style: dotted;
-  outline-color: violet;
 }
 
 input {
   width: 100%;
-  padding: 20px;
+  padding: 22px;
   border: none;
   outline: none;
-  font-size: 14px;
+  font-size: 16px;
   background-color: #eee;
   border-radius: 40px;
 }
@@ -201,10 +164,10 @@ input::placeholder {
 
 .search-button {
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   color: white;
   width: 100px;
-  padding: 5px;
+  padding: 10px;
   border: 0;
   outline: none;
   cursor: pointer;
@@ -220,5 +183,9 @@ input::placeholder {
   background-color: yellowgreen;
 }
 
+.row-3 {
+  width: auto;
+  flex-direction: column;
+}
 
 </style>
